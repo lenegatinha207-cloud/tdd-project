@@ -14,3 +14,8 @@ class NewVisitorTest(LiveServerTestCase):
         self.browser.get(self.live_server_url)
 
         self.assertIn('Lista de tarefas', self.browser.title)
+
+    def test_can_start_a_list_for_one_user(self):
+        self.browser.get(self.live_server_url)
+
+        self.assertIn('Lista de tarefas', self.browser.title)
