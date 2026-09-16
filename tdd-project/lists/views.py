@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from lists.models import List
+from lists.models import List, Item
 
 
 def home_page(request):
+    if request.method == 'POST':
+        list_ = List.objects.create()
+        Item.objects.create(text=request.POST['item_text'], list=list_)
+        return render(request, 'lists/list.html', {'list': list_})
+
     return render(request, 'lists/home.html')
 
 

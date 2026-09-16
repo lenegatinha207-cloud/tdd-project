@@ -1,3 +1,10 @@
 <html>
     <title>Lista de tarefas</title>
+
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            <input name="item_text" id="id_text" />
+        </form>
+    </body>
 </html>
